@@ -1,0 +1,29 @@
+## App
+
+### To run local app:
+
+> cd /app && npm install & npm start
+
+## Server
+
+### To run local server
+
+make sure to have install chrome, and verify if there is a new version in this list: https://googlechromelabs.github.io/chrome-for-testing/
+
+> cd /server & pip install & uvicorn main:app --reload --host 0.0.0.0 --port 80
+
+### build Docker image
+
+> sudo docker build -t depoproducts .
+
+### run Docker images
+
+> docker run --shm-size=2gb --name depoproductsServer -d -p 5500:80 depoproducts
+
+### to see logs inside container
+
+> docker logs depoproductsServer -f
+
+### to enter to container
+
+> docker exec -it mycontainer sh
